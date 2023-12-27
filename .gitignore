@@ -1,5 +1,7 @@
+/.coverage/
 /.next/
-/node_modules
+/coverage-reports/
+/node_modules/
 /playwright/.cache/
 /playwright/results/
 next-env.d.ts

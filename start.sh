@@ -2,7 +2,7 @@
 #
 # Run this to ensure you're working with a fresh environment.
 
-rm -rf .next/ node_modules/ playwright/.cache/ playwright/results/
+rm -rf .coverage/ .next/ coverage-reports/ node_modules/ playwright/.cache/ playwright/results/
 npm install
 npm run build
-npm run start
+NODE_V8_COVERAGE=.coverage npm run start

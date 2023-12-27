@@ -6,9 +6,17 @@ type Props = {
 	buttonText: string;
 };
 
-export default function PageComponent({ buttonText }: Props) {
+export default function PageComponentClient({ buttonText }: Props) {
 	const [count1, setCount1] = useState(0);
 	const [count2, setCount2] = useState(0);
+
+	if (count1 > 1) {
+		console.log("reached");
+	}
+
+	if (count1 > 100) {
+		console.log("never reached");
+	}
 
 	return (
 		<div>
