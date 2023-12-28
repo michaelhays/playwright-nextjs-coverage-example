@@ -20,7 +20,11 @@
 		"@types/node": "^20.10.5",
 		"@types/react": "^18.2.45",
 		"@types/react-dom": "^18.2.18",
-		"monocart-reporter": "^2.1.0",
-		"typescript": "^5.3.3"
+		"axios": "^1.6.3",
+        "cross-env": "^7.0.3",
+        "eight-colors": "^1.0.3",
+        "monocart-reporter": "^2.1.0",
+        "typescript": "^5.3.3",
+        "ws": "^8.16.0"
 	}
 }
