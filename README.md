@@ -45,4 +45,4 @@ node generateCoverage.js
 
 to generate [server-side coverage](https://github.com/cenfun/monocart-coverage-reports#nodejs-v8-coverage-report-for-server-side).
 
-Open `/coverage-reports/server/reports.html` in your browser to view the server-side coverage report.
+Open `/coverage-reports/server/report.html` in your browser to view the server-side coverage report.

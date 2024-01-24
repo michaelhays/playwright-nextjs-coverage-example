@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 export default {
 	webpack: (config) => {
-		config.devtool = "source-map";
+		Object.defineProperty(config, "devtool", {
+			get() {
+				return "source-map";
+			},
+			set() {},
+		});
+		// config.devtool = "source-map";
 		return config;
 	},
 };

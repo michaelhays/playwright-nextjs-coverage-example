@@ -3,6 +3,8 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
 	forbidOnly: Boolean(process.env.CI),
 	fullyParallel: true,
+	globalTeardown: "./globalTeardown.js",
+	outputDir: "playwright/results/",
 	reporter: [
 		["list"],
 		[
@@ -12,14 +14,26 @@ export default defineConfig({
 				outputFile: "./playwright/results/report.html",
 				coverage: {
 					lcov: true,
+					reports: ["html", "text", "lcov"],
 					entryFilter: (entry: { url: string }) =>
-						entry.url.includes("_next/static/chunks"),
-					sourceFilter: (sourcePath: string) => sourcePath.includes("src/"),
+						(entry.url.includes("next/static/chunks") ||
+							entry.url.includes("next/server/app")) &&
+						!entry.url.includes("node_modules"),
+					sourceFilter: (sourcePath: string) =>
+						sourcePath.includes("src/") && !sourcePath.includes("node_modules"),
+					sourcePath: (fileSource: string) => {
+						const list = ["_N_E/", "playwright-nextjs-coverage-example/"];
+						for (const pre of list) {
+							if (fileSource.startsWith(pre)) {
+								return fileSource.slice(pre.length);
+							}
+						}
+						return fileSource;
+					},
 				},
 			},
 		],
 	],
-	outputDir: "playwright/results/",
 	retries: process.env.CI ? 2 : 0,
 	projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
 	testDir: "./tests",
