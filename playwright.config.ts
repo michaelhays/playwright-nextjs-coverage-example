@@ -3,7 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
 	forbidOnly: Boolean(process.env.CI),
 	fullyParallel: true,
-	globalTeardown: "./globalTeardown.js",
+	globalTeardown: "./tests/globalTeardown.ts",
 	outputDir: "playwright/results/",
 	reporter: [
 		["list"],
