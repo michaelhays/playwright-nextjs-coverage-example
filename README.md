@@ -14,22 +14,21 @@ This is an example of a Next.js project with Playwright code coverage enabled th
 ### Install dependencies
 
 ```bash
-npm install
+bun install
 ```
 
-### Build and serve app
+### Serve app
 
 ```bash
-npm run build
-NODE_V8_COVERAGE=.coverage NODE_OPTIONS=--inspect npm run start
+bun dev
 ```
 
 ### Run Playwright tests
 
 ```bash
-npm run test
+bun test:e2e
 ```
 
 ## Results
 
-After `npm run test` has finished, open `/playwright/results/coverage/index.html` in your browser to view the client-side coverage report.
+After `bun test:e2e` has finished, open `/playwright/results/coverage/index.html` in your browser to view the client-side coverage report.
