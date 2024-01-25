@@ -5,7 +5,7 @@ async function getData() {
 export default async function PageComponentServer() {
 	const data = await getData();
 
-	if (data.hello === "hello") {
+	if (data.hello === "world") {
 		console.log("reached");
 	}
 

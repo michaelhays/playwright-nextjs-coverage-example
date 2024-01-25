@@ -24,7 +24,7 @@ const globalTeardown = async (config) => {
 	console.log("globalTeardown ...");
 
 	// [WebServer] the --inspect option was detected, the Next.js router server should be inspected at port 9230.
-	const res = await fetch("http://127.0.0.1:9229/json");
+	const res = await fetch("http://127.0.0.1:9230/json");
 	const resData = await res.json();
 	// using first one debugger process
 	const webSocketDebuggerUrl = resData[0].webSocketDebuggerUrl;
