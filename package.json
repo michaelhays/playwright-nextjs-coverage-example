@@ -17,12 +17,12 @@
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
     "@playwright/test": "1.41.1",
+    "@types/chrome-remote-interface": "0.31.14",
     "@types/node": "20.11.6",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
-    "@types/ws": "^8.5.10",
+    "chrome-remote-interface": "0.33.0",
     "monocart-reporter": "2.2.5",
-    "typescript": "5.3.3",
-    "ws": "8.16.0"
+    "typescript": "5.3.3"
   }
 }
